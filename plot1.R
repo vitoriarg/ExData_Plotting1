@@ -8,5 +8,5 @@ db <- file %>%
       subset(Date >= dmy("01/02/2007") & Date < dmy("03/02/2007"))
 
 png("plot1.png", height = 480, width = 480)
-with(db, hist(Global_active_power, main = paste("Global Active Power"), col = "orangered1", xlab = "Global Active Power (kilowatts)"))
+hist(db$Global_active_power, main = "Global Active Power", col = "orangered1", xlab = "Global Active Power (kilowatts)", freq = TRUE)
 dev.off()
